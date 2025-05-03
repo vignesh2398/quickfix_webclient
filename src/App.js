@@ -6,12 +6,13 @@ import Dashboard from './LoginPage/Dashboard';
 import ProtectedRoute from './ProtectedRoute';
 
 import SkillIndiaLogin from './LoginPage/SkillIndiaLogin';
+import OtpVerification from './LoginPage/OtpVerification';
 function App() {
 
   return (
     <Routes>
 <Route path='/' element={<SkillIndiaLogin/>}/>
-<Route path='/login' element={<Oauth/>}/>
+<Route path='/otpVerify' element={<OtpVerification/>}/>
 {/* <Route path='/login:' element={<Oauth/>}/> */}
 <Route path='/dashboard' element={<ProtectedRoute> <Dashboard/></ProtectedRoute>  }/>
     </Routes>

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./SkillIndiaLogin.css"; // For optional custom styles
 import axios from "axios";
 import { app } from "../constant";
+import { useNavigate } from "react-router-dom";
 
 const SkillIndiaLogin = () => {
   const [phoneNumber, setPhoneNumber] = useState(); 
@@ -13,6 +14,7 @@ const SkillIndiaLogin = () => {
       setPhoneNumber(value);
     }
   }
+  const navigate = useNavigate();
   const generateOtp = (e) => {
     try {
       e.preventDefault(); // Prevent form submission
@@ -20,6 +22,7 @@ const SkillIndiaLogin = () => {
         const otpUrl = `${app.backendUrl}/auth/generateOtp`;
         console.log(otpUrl, "otpUrl")
         axios.post(otpUrl,{"number":phoneNumber}).then((data)=>{
+          navigate("/otpVerify",{ state: { phone: phoneNumber } })
    console.log("otp generated")}).catch((err)=>{
    console.log(err)   })
         // window.location.href = otpUrl;
