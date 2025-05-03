@@ -1,0 +1,32 @@
+/* Ensure full-height image section on mobile */
+img.img-fluid {
+    max-height: 450px;
+    object-fit: cover;
+  }
+  
+  /* Indicator dots styling (active and inactive) */
+  .bg-dark .bg-white {
+    background-color: #fff !important;
+  }
+  .bg-dark .bg-secondary {
+    background-color: #6c757d !important;
+  }
+  
+  /* Customizing the input group */
+  .input-group-text {
+    background-color: #f8f9fa;
+    font-weight: 500;
+  }
+  
+  /* Rounded button styling */
+  .btn-primary {
+    border-radius: 30px;
+    font-weight: 500;
+    padding: 0.75rem;
+  }
+  
+  /* Responsive tweaks for smaller devices */
+  @media (max-width: 576px) {
+    .form-label {
+      font-size: 0.9rem  }
+  }

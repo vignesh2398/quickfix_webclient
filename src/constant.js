@@ -1,0 +1,1 @@
+export const app={backendUrl:'http://localhost:5000'}

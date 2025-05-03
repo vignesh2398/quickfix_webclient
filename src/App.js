@@ -1,25 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes,Route,useSearchParams} from 'react-router-dom';
+import { Oauth } from './LoginPage/Oauth';
+import Dashboard from './LoginPage/Dashboard';
+import ProtectedRoute from './ProtectedRoute';
 
+import SkillIndiaLogin from './LoginPage/SkillIndiaLogin';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+<Route path='/' element={<SkillIndiaLogin/>}/>
+<Route path='/login' element={<Oauth/>}/>
+{/* <Route path='/login:' element={<Oauth/>}/> */}
+<Route path='/dashboard' element={<ProtectedRoute> <Dashboard/></ProtectedRoute>  }/>
+    </Routes>
+
   );
 }
+
 
 export default App;
