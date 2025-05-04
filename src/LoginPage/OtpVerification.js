@@ -58,7 +58,7 @@ const OtpVerification = () => {
       })
       .then((response) => {
         console.log(response,"response.data.status);");
-        if (response.statusText === "OK") {
+        if (response.status === 200) {
           // handle success, e.g., navigate to the dashboard
           localStorage.setItem('quickfix', response.data.message.token);
           console.log("OTP verified successfully");
@@ -68,7 +68,7 @@ const OtpVerification = () => {
           navigate("/profile", { state: { phone: phone,id:response.data.message.user.id } });
         } else {
           // handle failure, e.g., show an error message
-          console.error("Invalid OTP");
+          alert("Invalid OTP");
         }
         // handle success
       })

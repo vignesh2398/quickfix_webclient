@@ -22,7 +22,9 @@ const ProfilePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${app.backendUrl}/api/updateprofile`, profile).then((response) => {if(response.statusText === "OK")
+    axios.post(`${app.backendUrl}/api/updateprofile`, profile).then((response) => {
+      console.log(response)
+      if(response.status === 200)
       navigate("/dashboard")
       console.log("Profile updated successfully", response.data);
     }).catch((error) => {console.log(error,"error")
