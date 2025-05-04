@@ -7,6 +7,7 @@ import ProtectedRoute from './ProtectedRoute';
 
 import SkillIndiaLogin from './LoginPage/SkillIndiaLogin';
 import OtpVerification from './LoginPage/OtpVerification';
+import ProfilePage from './LoginPage/ProfilePage';
 function App() {
 
   return (
@@ -14,7 +15,8 @@ function App() {
 <Route path='/' element={<SkillIndiaLogin/>}/>
 <Route path='/otpVerify' element={<OtpVerification/>}/>
 {/* <Route path='/login:' element={<Oauth/>}/> */}
-<Route path='/dashboard' element={<ProtectedRoute> <Dashboard/></ProtectedRoute>  }/>
+<Route path='/dashboard' element={ <Dashboard/> }/>
+<Route path='/profile' element={ <ProfilePage/> }/>
     </Routes>
 
   );

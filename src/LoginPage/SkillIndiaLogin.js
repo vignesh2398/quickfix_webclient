@@ -20,10 +20,10 @@ const SkillIndiaLogin = () => {
       e.preventDefault(); // Prevent form submission
       if (phoneNumber.length === 10) {
         const otpUrl = `${app.backendUrl}/auth/generateOtp`;
-        console.log(otpUrl, "otpUrl")
         axios.post(otpUrl,{"number":phoneNumber}).then((data)=>{
           navigate("/otpVerify",{ state: { phone: phoneNumber } })
    console.log("otp generated")}).catch((err)=>{
+    alert(err)
    console.log(err)   })
         // window.location.href = otpUrl;
         console.log(otpUrl, "otpUrl")
@@ -45,10 +45,10 @@ const SkillIndiaLogin = () => {
       {/* Top section with image */}
       <div className="text-center bg-light position-relative">
         <img
-          src="https://img.freepik.com/premium-psd/smartphone-screen-long-scroll-mockup_23-2150255824.jpg" // Replace with your own image or local path
+          src="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" // Replace with your own image or local path
           alt="Skill India"
           className="img-fluid w-100"
-          style={{ maxHeight: "450px", objectFit: "cover" }}
+          style={{ maxHeight: "600px", objectFit: "cover" }}
         />
         <div className="position-absolute bottom-0 w-100 bg-dark text-white py-3">
           {/* <h5 className="mb-1">Govt certified training</h5>
